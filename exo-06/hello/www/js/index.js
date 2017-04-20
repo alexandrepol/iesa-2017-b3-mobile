@@ -44,9 +44,14 @@ var app = {
         timestamp.innerHTML = datetime;
         
         var deviceDiv = document.getElementById('device');
-        deviceDiv.innerHTML = "J'utilise un "+device.platform+" v."+device.version;
-        
-
+        deviceDiv.innerHTML = '<ul data-role="listview" id="list">'
+            +'<li data-icon="arrow-l">Name: '+ device.manufacturer + '</li>'
+            +'<li data-icon="arrow-r">Model: '+ device.model + '</li>'
+            +'<li data-icon="arrow-r">Cordova: '+ device.cordova + '</li>'
+            +'<li data-icon="arrow-l">Platform: '+ device.platform + '</li>'
+            +'<li data-icon="arrow-r">UUID: '+ device.uuid + '</li>'
+            +'<li data-icon="arrow-l">Version: '+ device.version + '</li>'
+            +'</ul>';
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
